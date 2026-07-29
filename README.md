@@ -125,7 +125,7 @@ uvicorn app.main:app --reload
 
 ## API Эндпоинты
 
-### GET /health
+### `GET /health`
 
 Проверка состояния сервиса и всех зависимостей.
 
@@ -143,7 +143,7 @@ uvicorn app.main:app --reload
 }
 ````
 
-### POST /search
+### `POST /search`
 
 Семантический поиск по существующей документации.
 
@@ -173,7 +173,7 @@ uvicorn app.main:app --reload
 }
 ````
 
-### POST /generate
+### `POST /generate`
 
 Генерация новой документации API.
 
