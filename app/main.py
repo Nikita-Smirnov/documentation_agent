@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.agents import generate_and_validate_documentation
+from app.health import check_all_services
 from app.logger import logger
 from app.rag import (
     add_document_to_index,
@@ -34,8 +35,8 @@ app = FastAPI(title="AI Docs Assistant", lifespan=lifespan)
 
 
 @app.get("/health")
-def health_check():
-    return {"status": "ok"}
+async def health_check():
+    return await check_all_services()
 
 
 @app.post("/search", response_model=SearchResponse)
